@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Koa Todo</title>
+</head>
+<body class="before-loaded">
+    <div class="box">
+        <h5 class="caption">TODO LIST</h5>
+        <ul class="todo-list" id="todo-list">
+            {{#each todos}}
+            <li class="todo-item" id="todo-item-{{id}}">
+                <div class="opts">
+                    <input type="checkbox" class="todo-check" {{#if checked}}checked{{/if}} id="todo-check-{{id}}" data-id="{{id}}">
+                    <label class="todo-check-label" data-id="{{id}}"></label>
+                </div>
+                <button class="remove-todo" data-id="{{id}}"></button>
+                <span>{{content}}</span>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="form" id="todo-form">
+            <div class="sending-tip">
+                <i class="spinner"></i>
+                <span>sending ...</span>
+            </div>
+            <input type="text" id="new-todo" placeholder="type in some texts then press enter">
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
