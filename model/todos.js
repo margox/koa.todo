@@ -17,7 +17,7 @@ module.exports = {
 
     remove: function (id) {
         var index = getTodoIndexById(id);
-        todos.splice(index, 1);
+        index >= 0 && todos.splice(index, 1);
         return id;
     },
 
